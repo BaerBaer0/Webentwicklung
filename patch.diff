@@ -1,0 +1,85 @@
+From 018814ae554ff68309981e027e50a269d3164470 Mon Sep 17 00:00:00 2001
+From: BaerBaer0 <32300935+BaerBaer0@users.noreply.github.com>
+Date: Tue, 17 Oct 2017 20:05:05 +0200
+Subject: [PATCH] Bild
+
+---
+ css/layout_unterseiten.css            |  2 +-
+ html/admin/css/layout_unterseiten.css | 37 +++++++++++++++++++++++++++++++++++
+ html/admin/index.html                 |  2 +-
+ 3 files changed, 39 insertions(+), 2 deletions(-)
+ create mode 100644 html/admin/css/layout_unterseiten.css
+
+diff --git a/css/layout_unterseiten.css b/css/layout_unterseiten.css
+index 017a5c9..c35da1f 100644
+--- a/css/layout_unterseiten.css
++++ b/css/layout_unterseiten.css
+@@ -19,7 +19,7 @@ main {
+ 	
+ }
+ .brand-logo{
+-	background-image: url("../image/logo.png");
++	background-image: url("../../../image/logo.png");
+ 	
+  
+     background-repeat: no-repeat;
+diff --git a/html/admin/css/layout_unterseiten.css b/html/admin/css/layout_unterseiten.css
+new file mode 100644
+index 0000000..c35da1f
+--- /dev/null
++++ b/html/admin/css/layout_unterseiten.css
+@@ -0,0 +1,37 @@
++body {
++	display: flex;
++	min-height: 100vh;
++	flex-direction: column;
++	height: 100%;
++}
++
++main {
++	flex: 1 0 auto;
++	padding: 100px;
++}
++
++.nav-wrapper{
++		background-color: #4c4e52;
++		min-height: 100px;
++		
++		clear: both;
++		
++	
++}
++.brand-logo{
++	background-image: url("../../../image/logo.png");
++	
++ 
++    background-repeat: no-repeat;
++    min-height: 100%;
++    width: 100%;
++}
++
++
++
++.page-footer {
++	background-color: #4c4e52;
++}
++.page-footer p,h5 {
++	text-align: left;
++}
+\ No newline at end of file
+diff --git a/html/admin/index.html b/html/admin/index.html
+index a794607..e80c2bb 100644
+--- a/html/admin/index.html
++++ b/html/admin/index.html
+@@ -7,7 +7,7 @@
+ <!--Import materialize.css-->
+ <link type="text/css" rel="stylesheet" href="../../css/materialize.min.css"
+ 	media="screen,projection" />
+-	<link type="text/css" rel="stylesheet" href="../../css/layout_unterseiten.css"
++	<link type="text/css" rel="stylesheet" href="css/layout_unterseiten.css"
+ 	media="screen,projection" />
+ 
+ 
+-- 
+2.14.1.windows.1
+
