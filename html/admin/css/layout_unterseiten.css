@@ -19,14 +19,10 @@ main {
 		
 	
 }
-.brand-logo{
-	background-image: url("../../../image/logo.png");
-	
- 
-    background-repeat: no-repeat;
-    min-height: 100%;
-    width: 100%;
-}
+nav .brand-logo{
+
+	padding: 3px;
+	}
 
 
 
