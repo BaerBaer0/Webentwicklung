@@ -23,8 +23,26 @@ nav .brand-logo{
 
 	padding: 3px;
 	}
+.btn{
+	background-color: red;	
+}
 
+.btn:hover, .btn-large:hover {
+	background-color: red;
+}
 
+ul#dropdown2.dropdown-content.active {
+	
+    position: absolute;
+    margin-top:50px;
+     
+}
+ul#dropdown1.dropdown-content.active {
+	
+    position: absolute;
+    margin-top:50px;
+     
+}
 
 .page-footer {
 	background-color: #4c4e52;
