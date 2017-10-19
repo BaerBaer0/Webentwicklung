@@ -4,7 +4,7 @@ ToDo
 - Button ändern mit textfeld - unter benutzernamen (regestrieren)
 - Benutzernamen usammegeschrieben und unterstrich farbe ändern
 
-- Mitarbeiter button farben - rot
+- Mitarbeiter button farben - rot (#783040)
 - Logout rechts oben
 - Logout auf jede seite
 - Button wo man auf Skillprofile wieder kommt
@@ -22,3 +22,15 @@ ToDo
 
 - Admin - links einfärben
 -
+
+
+Button:
+		.btn, .btn-large {
+			color: #000;
+			background-color: #fff;	
+			
+		}
+		
+		.btn:hover, .btn-large:hover {
+			background-color: #783040;
+		}

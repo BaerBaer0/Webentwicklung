@@ -48,6 +48,16 @@ nav .brand-logo{
 }
 
 
+.btn, .btn-large {
+	color: #000;
+	background-color: #fff;	
+	
+}
+
+.btn:hover, .btn-large:hover {
+	background-color: #783040;
+}
+
 
 /* label color */
    .input-field label {

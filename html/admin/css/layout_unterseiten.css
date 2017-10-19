@@ -22,13 +22,19 @@ main {
 nav .brand-logo{
 
 	padding: 3px;
+	
 	}
-.btn{
-	background-color: red;	
+.btn {
+	background-color: #fff;	
+	
+}
+.btn, .btn-large{
+	background-color: #000;	
+	
 }
 
 .btn:hover, .btn-large:hover {
-	background-color: red;
+	background-color: #783040;
 }
 
 ul#dropdown2.dropdown-content.active {
