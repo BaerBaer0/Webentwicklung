@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="../../mitarbeiter/css/materialize.min.css" />
+  <link type="text/css" rel="stylesheet" href="../../mitarbeiter/css/layout.css" />
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="../../mitarbeiter/js/materialize.min.js"></script>
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <script>
+    $(document).ready(function() {
+      $('select').material_select();
+
+
+
+      $('.datepicker').pickadate({
+        selectMonths: true, // Creates a dropdown to control month
+        selectYears: 100, // Creates a dropdown of 15 years to control year,
+        today: 'Today',
+        clear: 'Clear',
+        close: 'Ok',
+        closeOnSelect: false // Close upon selecting a date,
+      });
+
+      $('#box1').click(function() {
+        $('#box1_1').toggle();
+      });
+
+      $('#box2').click(function() {
+        $('#box2_1').toggle();
+      });
+
+      $('#box3').click(function() {
+        $('#box3_1').toggle();
+      });
+
+      $('#box3_1_1').click(function() {
+        $('#box3_1_2').toggle();
+      });
+
+      $('#box3_2_1').click(function() {
+        $('#box3_2_2').toggle();
+      });
+
+      $('#box4').click(function() {
+        $('#box4_1').toggle();
+      });
+      $('#box5').click(function() {
+        $('#box5_1').toggle();
+      });
+
+    });
+  </script>
+</head>
+
+<body>
+<nav class="light-blue lighten-1" role="navigation">
+		<ul id="dropdown1" class="dropdown-content">
+			<li><a href="#!"><i class="material-icons left">search</i>
+					Mitarbeiter Suchen</a></li>
+			<li><a href="#!"><i class="material-icons left">person_add</i>Mitarbeiter
+					anlegen</a></li>
+			
+
+		</ul>
+
+		<ul id="dropdown2" class="dropdown-content">
+			<li><a href="#!"><i class="material-icons left">search</i>
+					Projektleiter Suchen</a></li>
+			<li><a href="#!"><i class="material-icons left">person_add</i>Projektleiter
+					anlegen</a></li>
+					
+
+		</ul>
+		<nav>
+			<div class="nav-wrapper">
+				<a href="../../../index.html" class="brand-logo"><img
+					src="../../../image/logo.png" width="100%" height="20%"></a>
+				<ul class="right hide-on-med-and-down">
+					<li><a class="dropdown-button" href="#!"
+						data-activates="dropdown1">Mitarbeiter Verwaltung<i
+							class="material-icons right">arrow_drop_down</i></a></li>
+					<!-- Dropdown Trigger -->
+					<li><a class="dropdown-button" href="#!"
+						data-activates="dropdown2">Projektleiter Verwaltung<i
+							class="material-icons right">arrow_drop_down</i></a></li>
+							
+							<li><a  href="../../../index.html">Logout</a></li>
+				</ul>
+			</div>
+		</nav>
+	</nav>
+
+
+
+
+
+  <div class="mitarbeiter">
+
+
+    <h3 class="header">Skill-Profile Bearbeiten</h3>
+    <div class="row">
+      <div class="col s12">
+        <div class="col s1">
+
+          <div class="card-image">
+            <img class="circle responsive-img" src="../../mitarbeiter/image/potrait.jpg">
+          </div>
+        </div>
+        <div class="col s6">
+          <br><br>
+          <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Max Mustermann</h5>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="row">
+      <div><a id="box1" class="btn-floating waves-effect waves-light"><i class="material-icons btn-color">add</i></a> <a style="font-size: 15px; color: black">Persönliche Daten</a>
+        <div id="box1_1" style="display: none">
+          <br>
+          <div class="row">
+            <form class="col s12">
+              <div class="input-field col s6">
+                <input id="name" type="text" class="validate" value="Mustermann">
+                <label for="name">Name: </label>
+              </div>
+              <div class="input-field col s6">
+                <input id="vname" type="text" class="validate" value="Max">
+                <label for="name">Vorname: </label>
+              </div>
+              <div class="input-field col s6">
+                <input id="email" type="text" class="validate" value="maxmustermann@info.de">
+                <label for="email">Email: </label>
+              </div>
+              <div class="input-field col s6">
+                <input type="text" class="datepicker" value="05.09.1982"> <label for="bday">Geburtstag: </label>
+              </div>
+              <div class="input-field col s6">
+                <input id="beruf" type="text" class="validate" value="Softwareentwickler"> <label for="beruf">Beruf: </label>
+              </div>
+              <div class="input-field col s6">
+                <input id="beruf" type="text" class="validate" value="Hochschule Rhein-Waal, Bachelor Medien -und Kommunikationsinformatik"> <label for="beruf">Abgeschlossene Hochschul- und Berufsausbildungen </label>
+              </div>
+              <br>
+              <div class="input-field col s6">
+                <select multiple>
+                <option value="" disabled selected>Bitte auswählen</option>
+                <option value="1">Deutsch</option>
+                <option value="2">Englisch</option>
+                <option value="3">Französisch</option>
+                <option value="4">etc.</option>
+              </select>
+                <label>Sprachen:</label>
+              </div>
+              <br>
+              <div class="input-field col s6">
+                <input id="beschreibung" type="text" class="validate"> <label for="beschreibung">Beschreiben Sie sich in wenigen kurzen Sätzen </label>
+              </div>
+              <div class="input-field col s12">
+                <div class="file-field input-field">
+                  <div class="waves-effect waves-light btn">
+                    <span>Browse</span>
+                    <input type="file" />
+                  </div>
+                  <div class="file-path-wrapper">
+                    <input class="file-path validate" type="text" placeholder="Foto hochladen" />
+                  </div>
+                </div>
+              </div>
+              <div class="input-field col s12">
+                <a class="waves-effect waves-light btn">Speichern</a>
+              </div>
+
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <br>
+      <div><a id="box2" class="btn-floating waves-effect waves-light"><i class="material-icons btn-color">add</i></a><a style="font-size: 15px; color: black"> EDV-Kenntnisse</a>
+        <div id="box2_1" style="display: none">
+          <br>
+          <div class="row">
+            <form class="col s12">
+              <div class="input-field col s6">
+                <select multiple>
+                  <option value="" disabled selected >Bitte auswählen</option>
+                  <option value="1">Windows</option>
+                  <option value="2">Linux</option>
+                  <option value="3">Max OS X</option>
+                  <option value="4">IOS</option>
+                  <option value="5">etc</option>
+                </select>
+                <label>Betriebssysteme:</label>
+              </div>
+              <div class="input-field col s6">
+                <select multiple>
+                <option value="" disabled selected>Bitte auswählen</option>
+                <option value="1">JavaScript</option>
+                <option value="2">Java</option>
+                <option value="3">C#</option>
+                <option value="4">C++</option>
+                <option value="5">C</option>
+                <option value="6">etc.</option>
+              </select>
+                <label>Programmiersprachen:</label>
+              </div>
+              <div class="input-field col s6">
+                <select multiple>
+                <option value="" disabled selected>Bitte auswählen</option>
+                <option value="1">Ruby</option>
+                <option value="2">PHP</option>
+                <option value="3">Python</option>
+                <option value="5">etc</option>
+              </select>
+                <label>Skriptsprachen:</label>
+              </div>
+              <div class="input-field col s6">
+                <input id="sonstiges" type="text" class="validate"> <label for="name">Sonstiges: </label>
+              </div>
+              <a class="waves-effect waves-light btn">Speichern</a>
+            </form>
+          </div>
+        </div>
+      </div>
+      <br>
+
+      <div><a id="box3" class="btn-floating waves-effect waves-light"><i class="material-icons btn-color">add</i></a><a style="font-size: 15px; color: black"> Projekt- und Tätigkeitserfahrung</a>
+        <div id="box3_1" style="margin-Left: 50px; display: none">
+          <a id="box3_1_1" class="btn-floating waves-effect waves-light"><i class="material-icons btn-color">add</i></a><a style="font-size: 15px; color: black"> Projekt Kamp-Lintfort</a>
+          <div id="box3_1_2" style="display: none">
+            <div class="row">
+              <form class="col s12">
+                <div class="input-field col s6">
+                  <input type="text" class="datepicker"> <label for="bday">Start Datum des Projekts: </label>
+                </div>
+                <div class="input-field col s6">
+                  <input type="text" class="datepicker"> <label for="bday">End Datum des Projekts: </label>
+                </div>
+                <div class="input-field col s6">
+                  <input id="email" type="text" class="validate">
+                  <label for="email">Ihre Rolle im Projekt: </label>
+                </div>
+                <div class="input-field col s6">
+                  <input id="name" type="text" class="validate"> <label for="name">Projekt Beschreibung: </label>
+                </div>
+                <div class="input-field col s6">
+                  <input id="name" type="text" class="validate"> <label for="name">Eingesetzte Technologien: </label>
+                </div>
+                <div class="input-field col s6">
+                  <input id="name" type="text" class="validate"> <label for="name">Ihre Projektaufgaben: </label>
+                </div>
+                <a class="waves-effect waves-light btn">Speichern</a>
+              </form>
+            </div>
+          </div>
+          <br>
+          <br>
+
+          <a id="box3_2_1" class="btn-floating waves-effect waves-light"><i class="material-icons btn-color">add</i></a><a style="font-size: 15px; color: black"> Projekt Moers</a>
+          <div id="box3_2_2" style="display: none">
+            <div class="row">
+              <form class="col s12">
+                <div class="input-field col s6">
+                  <input type="text" class="datepicker"> <label for="bday">Start Datum des Projekts: </label>
+                </div>
+                <div class="input-field col s6">
+                  <input type="text" class="datepicker"> <label for="bday">End Datum des Projekts: </label>
+                </div>
+                <div class="input-field col s6">
+                  <input id="email" type="text" class="validate">
+                  <label for="email">Ihre Rolle im Projekt: </label>
+                </div>
+                <div class="input-field col s6">
+                  <input id="name" type="text" class="validate"> <label for="name">Projekt Beschreibung: </label>
+                </div>
+                <div class="input-field col s6">
+                  <input id="name" type="text" class="validate"> <label for="name">Eingesetzte Technologien: </label>
+                </div>
+                <div class="input-field col s6">
+                  <input id="name" type="text" class="validate"> <label for="name">Ihre Projektaufgaben: </label>
+                </div>
+                <a class="waves-effect waves-light btn">Speichern</a>
+              </form>
+            </div>
+          </div>
+          <br> <br>
+          <a class="waves-effect waves-light btn">Neues Projekt hinzufügen</a>
+        </div>
+      </div>
+
+      <br>
+      <div><a id="box4" class="btn-floating waves-effect waves-light"><i class="material-icons btn-color">add</i></a><a style="font-size: 15px; color: black"> Zertifizierungen</a>
+        <div id="box4_1" style="display: none">
+          <div class="row">
+            <form class="col s12">
+
+
+              <div class="input-field col s6">
+                <input id="name" type="text" class="validate">
+                <label for="name">Erworbene Zertifikate unter Angabe des Erwerbdatums eingeben</label>
+              </div>
+              <div class="col s6">
+                <a class="btn-floating waves-effect waves-light"><i class="material-icons btn-color">add</i></a>
+              </div>
+              <div class="col s12">
+                <a class="waves-effect waves-light btn">Speichern</a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <br>
+
+      <div><a id="box5" class="btn-floating waves-effect waves-light"><i class="material-icons btn-color">add</i></a><a style="font-size: 15px; color: black"> Branchenkenntnisse</a>
+        <div id="box5_1" style="display: none">
+          <div class="row">
+            <form class="col s12">
+              <div class="input-field col s6">
+                <input id="name" type="text" class="validate">
+                <label for="name">In welchen Branchen haben sie bereits gearbeitet?</label>
+              </div>
+              <div class="col s6">
+                <a class="btn-floating waves-effect waves-light"><i class="material-icons btn-color">add</i></a>
+              </div>
+              <div class="col s12">
+                <a class="waves-effect waves-light btn">Speichern</a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <br>
+    </div>
+    <p>
+      <a href="../index.html" class="waves-effect waves-light btn">zurück</a>
+            <a href="#" class="waves-effect waves-light btn">Bearbeiten</a>
+      
+  </div>
+
+  <footer class="page-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Kontakt</h5>
+          <p class="grey-text text-lighten-4">
+            Kontakt Interaction Room GmbH <br> Veronikastr. 34 <br> 45131 Essen <br> Tel. +49 (0) 201 87 42 17 27<br> info@interaction-room.de
+          </p>
+        </div>
+        <div class="col l6 s12">
+          <h5 class="white-text">Anfragen</h5>
+          <p class="grey-text text-lighten-4">
+            Frau M&uuml;ller <br> Tel. +49 (0) 201 87 42 17 27<br> a.m@interaction-room.de
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </footer>
+
+</body>
+
+</html>
