@@ -17,6 +17,7 @@
       $('select').material_select();
 
 
+
       $('.datepicker').pickadate({
         selectMonths: true, // Creates a dropdown to control month
         selectYears: 100, // Creates a dropdown of 15 years to control year,
@@ -58,14 +59,17 @@
 </head>
 
 <body>
-  <nav>
-    <div class="nav-wrapper">
-      <a href="../../index.html" class="brand-logo"><img src="image/logo.png"></a>
-
-
-    </div>
+  <nav class="light-blue lighten-1" role="navigation">
+    <nav>
+      <div class="nav-wrapper">
+        <a href="../../index.html" class="brand-logo"><img
+          src="../../image/logo.png" width="100%" height="20%"></a>
+        <ul class="right hide-on-med-and-down">
+          <a href="../../index.html" class="right-align">Logout</a>
+        </ul>
+      </div>
+    </nav>
   </nav>
-
 
 
 
@@ -80,20 +84,20 @@
         <div class="col s1">
 
           <div class="card-image">
-            <img  class="circle responsive-img" src="image/potrait.jpg">
+            <img class="circle responsive-img" src="image/potrait.jpg">
           </div>
         </div>
-        <div class="col s2">
+        <div class="col s6">
           <br><br>
-          <h5>Max Mustermann</h5>
+          <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Max Mustermann</h5>
         </div>
       </div>
     </div>
 
 
-    <br>
+
     <div class="row">
-      <div><a id="box1" class="btn-floating btn-small waves-effect waves-light grey darken-4"><i class="material-icons">add</i></a> <a style="font-size: 15px; color: black">Persönliche Daten</a>
+      <div><a id="box1" class="btn-floating waves-effect waves-light"><i class="material-icons btn-color">add</i></a> <a style="font-size: 15px; color: black">Persönliche Daten</a>
         <div id="box1_1" style="display: none">
           <br>
           <div class="row">
@@ -136,7 +140,7 @@
               </div>
               <div class="input-field col s12">
                 <div class="file-field input-field">
-                  <div class="waves-effect grey darken-4 btn right-align ">
+                  <div class="waves-effect waves-light btn">
                     <span>Browse</span>
                     <input type="file" />
                   </div>
@@ -146,7 +150,7 @@
                 </div>
               </div>
               <div class="input-field col s12">
-                <a class="waves-effect grey darken-4 btn right-align ">Speichern</a>
+                <a class="waves-effect waves-light btn">Speichern</a>
               </div>
 
             </form>
@@ -158,20 +162,21 @@
       </div>
 
       <br>
-      <div><a id="box2" class="btn-floating btn-small waves-effect waves-light grey darken-4"><i class="material-icons">add</i></a><a style="font-size: 15px; color: black"> EDV-Kenntnisse</a>
+      <div><a id="box2" class="btn-floating waves-effect waves-light"><i class="material-icons btn-color">add</i></a><a style="font-size: 15px; color: black"> EDV-Kenntnisse</a>
         <div id="box2_1" style="display: none">
           <br>
           <div class="row">
             <form class="col s12">
               <div class="input-field col s6">
                 <select multiple>
-                <option value="" disabled selected>Bitte auswählen</option>
-                <option value="1">Windows</option>
-                <option value="2">Linux</option>
-                <option value="3">Max OS X</option>
-                <option value="4">IOS</option>
-                <option value="5">etc</option>
-              </select>
+                  <option value="" disabled selected >Bitte auswählen</option>
+                  <option style="color:whatever_color; background-color: different_color">text</option>
+
+                  <option value="2">Linux</option>
+                  <option value="3">Max OS X</option>
+                  <option value="4">IOS</option>
+                  <option value="5">etc</option>
+                </select>
                 <label>Betriebssysteme:</label>
               </div>
               <div class="input-field col s6">
@@ -199,16 +204,16 @@
               <div class="input-field col s6">
                 <input id="sonstiges" type="text" class="validate"> <label for="name">Sonstiges: </label>
               </div>
-              <a class="waves-effect grey darken-4 btn right-align ">Speichern</a>
+              <a class="waves-effect waves-light btn">Speichern</a>
             </form>
           </div>
         </div>
       </div>
       <br>
 
-      <div><a id="box3" class="btn-floating btn-small waves-effect waves-light grey darken-4"><i class="material-icons">add</i></a><a style="font-size: 15px; color: black"> Projekt- und Tätigkeitserfahrung</a>
+      <div><a id="box3" class="btn-floating waves-effect waves-light"><i class="material-icons btn-color">add</i></a><a style="font-size: 15px; color: black"> Projekt- und Tätigkeitserfahrung</a>
         <div id="box3_1" style="margin-Left: 50px; display: none">
-          <a id="box3_1_1" class="btn-floating btn-small waves-effect waves-light grey darken-4"><i class="material-icons">add</i></a><a style="font-size: 15px; color: black"> Projekt Kamp-Lintfort</a>
+          <a id="box3_1_1" class="btn-floating waves-effect waves-light"><i class="material-icons btn-color">add</i></a><a style="font-size: 15px; color: black"> Projekt Kamp-Lintfort</a>
           <div id="box3_1_2" style="display: none">
             <div class="row">
               <form class="col s12">
@@ -231,14 +236,14 @@
                 <div class="input-field col s6">
                   <input id="name" type="text" class="validate"> <label for="name">Ihre Projektaufgaben: </label>
                 </div>
-                <a class="waves-effect grey darken-4 btn right-align ">Speichern</a>
+                <a class="waves-effect waves-light btn">Speichern</a>
               </form>
             </div>
           </div>
           <br>
           <br>
 
-          <a id="box3_2_1" class="btn-floating btn-small waves-effect waves-light grey darken-4"><i class="material-icons">add</i></a><a style="font-size: 15px; color: black"> Projekt Moers</a>
+          <a id="box3_2_1" class="btn-floating waves-effect waves-light"><i class="material-icons btn-color">add</i></a><a style="font-size: 15px; color: black"> Projekt Moers</a>
           <div id="box3_2_2" style="display: none">
             <div class="row">
               <form class="col s12">
@@ -261,31 +266,31 @@
                 <div class="input-field col s6">
                   <input id="name" type="text" class="validate"> <label for="name">Ihre Projektaufgaben: </label>
                 </div>
-                <a class="waves-effect grey darken-4 btn right-align ">Speichern</a>
+                <a class="waves-effect waves-light btn">Speichern</a>
               </form>
             </div>
           </div>
           <br> <br>
-          <a class="waves-effect grey darken-4 btn right-align ">Neues Projekt hinzufügen</a>
+          <a class="waves-effect waves-light btn">Neues Projekt hinzufügen</a>
         </div>
       </div>
 
       <br>
-      <div><a id="box4" class="btn-floating btn-small waves-effect waves-light grey darken-4"><i class="material-icons">add</i></a><a style="font-size: 15px; color: black"> Zertifizierungen</a>
+      <div><a id="box4" class="btn-floating waves-effect waves-light"><i class="material-icons btn-color">add</i></a><a style="font-size: 15px; color: black"> Zertifizierungen</a>
         <div id="box4_1" style="display: none">
           <div class="row">
             <form class="col s12">
 
 
               <div class="input-field col s6">
-                <input id="name" type="text" class="validate" >
+                <input id="name" type="text" class="validate">
                 <label for="name">Erworbene Zertifikate unter Angabe des Erwerbdatums eingeben</label>
               </div>
               <div class="col s6">
-                <a class="btn-floating btn-small waves-effect waves-light grey darken-4"><i class="material-icons">add</i></a>
+                <a class="btn-floating waves-effect waves-light"><i class="material-icons btn-color">add</i></a>
               </div>
               <div class="col s12">
-                <a class="waves-effect grey darken-4 btn right-align ">Speichern</a>
+                <a class="waves-effect waves-light btn">Speichern</a>
               </div>
             </form>
           </div>
@@ -293,19 +298,19 @@
       </div>
       <br>
 
-      <div><a id="box5" class="btn-floating btn-small waves-effect waves-light grey darken-4"><i class="material-icons">add</i></a><a style="font-size: 15px; color: black"> Branchenkenntnisse</a>
+      <div><a id="box5" class="btn-floating waves-effect waves-light"><i class="material-icons btn-color">add</i></a><a style="font-size: 15px; color: black"> Branchenkenntnisse</a>
         <div id="box5_1" style="display: none">
           <div class="row">
             <form class="col s12">
               <div class="input-field col s6">
-                <input id="name" type="text" class="validate" >
+                <input id="name" type="text" class="validate">
                 <label for="name">In welchen Branchen haben sie bereits gearbeitet?</label>
               </div>
               <div class="col s6">
-                <a class="btn-floating btn-small waves-effect waves-light grey darken-4"><i class="material-icons">add</i></a>
+                <a class="btn-floating waves-effect waves-light"><i class="material-icons btn-color">add</i></a>
               </div>
               <div class="col s12">
-                <a class="waves-effect grey darken-4 btn right-align ">Speichern</a>
+                <a class="waves-effect waves-light btn">Speichern</a>
               </div>
             </form>
           </div>
@@ -314,7 +319,7 @@
       <br>
     </div>
     <p>
-    <a class="waves-effect grey darken-4 btn" href="../../index.html">Logout </a>
+      <a href="index.html" class="waves-effect waves-light btn">zurück</a>
   </div>
 
   <footer class="page-footer">
@@ -329,10 +334,9 @@
         <div class="col l6 s12">
           <h5 class="white-text">Anfragen</h5>
           <p class="grey-text text-lighten-4">
-            Frau Müller <br> Tel. +49 (0) 201 87 42 17 27<br> a.m@interaction-room.de
+            Frau M&uuml;ller <br> Tel. +49 (0) 201 87 42 17 27<br> a.m@interaction-room.de
           </p>
         </div>
-
       </div>
     </div>
 
