@@ -11,13 +11,24 @@
   media="screen,projection" />
 
 
+
 <!--Let browser know website is optimized for mobile-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <script>
+    $(document).ready(function() {
+      $('select').material_select();
 
+       $(document).ready(function(){
+    // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+     $('#modal1').modal('open');
+  });
+
+    </script>
 
 </head>
 <body>
+
 
 
 <nav class="light-blue lighten-1" role="navigation">
@@ -33,6 +44,9 @@
     </nav>
   </nav>
 
+
+
+
 <main>
         <!--
       Sizes:
@@ -42,85 +56,135 @@
       large: 6rem
       -->
 
-<style>
-* {
-  box-sizing: border-box;
-}
-
-#myInput {
-  background-image: url('css/searchicon.png');
-  background-position: 10px 20px;
-  background-repeat: no-repeat;
-  width: 50%;
-  font-size: 16px;
-  padding: 10px 18px 10px 38px;
-  border: 1px solid #ddd;
-  margin-bottom: 12px;
-      -webkit-transition: width 0.4s ease-in-out;
-    transition: width 0.4s ease-in-out;
-}
 
 
+          
 
-#myUL {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
+        <div class="row">
+    <div class="col s6">
+    <ul class="collapsible" data-collapsible="accordion">
+    <li>
 
-#myUL li a {
-  border: 1px solid #ddd;
-  margin-top: -1px; /* Prevent double borders */
-  background-color: #f6f6f6;
-  padding: 10px;
-  text-decoration: none;
-  font-size: 18px;
-  color: black;
-  display: block
-}
+      <div class="collapsible-header"><i class="material-icons">tune</i>Filter</div>
+      <div class="collapsible-body"><span>
 
-#myUL li a:hover:not(.header) {
-  background-color: #eee;
-}
-</style>
-</head>
-<body>
+           <label>Fachgebiet</label>
+  <select class="browser-default">
+    <option value="" disabled selected>Bitte auswählen</option>
+              <option value="1">
+Information Technology (IT) Systems Analyst</option>
+                <option value="2">IT-Systemadministrator/ EDV Fachkraft</option>
+                <option value="3">
+Head of Information Technology - Infrastructure, Operations</option>
+                <option value="4">IT Projektportfoliomanager / PMO</option>
+                <option value="5">IT-Administrator Netzwerk</option>
+                <option value="6">IT Process Expert Sales</option>
+  </select>
+        
+          <label>Betriebssysteme:</label>
+  <select class="browser-default">
+    <option value="" disabled selected>Bitte auswählen</option>
+                  <option value="1">Windows</option>
+                  <option value="2">Linux</option>
+                  <option value="3">Max OS X</option>
+                  <option value="4">IOS</option>
+                  <option value="5">etc</option>
+  </select>
+ <label>Programmiersprachen:</label>
+  <select class="browser-default">
+    <option value="" disabled selected>Bitte auswählen</option>
+              <option value="1">JavaScript</option>
+                <option value="2">Java</option>
+                <option value="3">C#</option>
+                <option value="4">C++</option>
+                <option value="5">C</option>
+                <option value="6">etc.</option>
+  </select>
+
+   <label>Skriptsprachen</label>
+  <select class="browser-default">
+    <option value="" disabled selected>Bitte auswählen</option>
+                <option value="1">Ruby</option>
+                <option value="2">PHP</option>
+                <option value="3">Python</option>
+                <option value="4">etc</option>
+  </select>
+
+   <label>Projekt- und Tätigkeitserfahrung</label>
+  <select class="browser-default">
+    <option value="" disabled selected>Bitte auswählen</option>
+              <option value="1"> <10 Std.</option>
+                <option value="2"> <30 Std. </option>
+                <option value="3"> <50 Std. </option>
+                <option value="4"> <100 Std. </option>
+                <option value="5"> >100Std. </option>
+                <option value="6">Keine</option>
+  </select>
+
+   <label>Verfügbarkeit</label>
+  <select class="browser-default">
+    <option value="" disabled selected>Bitte auswählen</option>
+              <option value="1">1 Woche</option>
+                <option value="2">2 Wochen</option>
+                <option value="3">3 Wochen</option>
+                <option value="4">1 Monat</option>
+                <option value="5">6 Monate</option>
+                <option value="6">1 Jahr</option>
+  </select>
 
 
 
-<input  type="text" id="myInput" onkeyup="myFunction()" placeholder="Suche"  title= "Suche"> 
+</div>
 
-<ul id="myUL">
-  <li><a href="#">Adele</a></li>
-  <li><a href="#">Agnes</a></li>
+      </div>
+    </li>
 
-  <li><a href="#">Billy</a></li>
-  <li><a href="#">Bob</a></li>
+  </ul>
+    <div class="row">
+    <form class="col s6">
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">search</i>
+          <input id="icon_prefix" type="text" class="validate">
+          <label for="icon_prefix">Suche</label>
+        </div>
+        
+      </div>
+    </form>
+  </div>
 
-  <li><a href="#">Calvin</a></li>
-  <li><a href="#">Christina</a></li>
-  <li><a href="#">Cindy</a></li>
-</ul>
-
-<script>
-function myFunction() {
-    var input, filter, ul, li, a, i;
-    input = document.getElementById("myInput");
-    filter = input.value.toUpperCase();
-    ul = document.getElementById("myUL");
-    li = ul.getElementsByTagName("li");
-    for (i = 0; i < li.length; i++) {
-        a = li[i].getElementsByTagName("a")[0];
-        if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
-            li[i].style.display = "";
-        } else {
-            li[i].style.display = "none";
-
-        }
-    }
-}
-</script>
-
+ <ul class="collection">
+    <li class="collection-item avatar">
+      <img src="../../image/face1.jpg" alt="" class="circle">
+     <span class="title">Max Mustermann</span>
+      <p>Max.mustermann@gmail.com <br>
+         0173/3546078
+      </p>
+      <a href="../../html/mitarbeiter/index.html" class="secondary-content"><i class="material-icons">comment</i></a>
+    </li>
+    <li class="collection-item avatar">
+      <img src="../../image/face2.jpg" alt="" class="circle">
+      <span class="title">Max Mustermann</span>
+      <p>Max.mustermann@gmail.com <br>
+         0173/3546078
+      </p>
+      <a href="#!" class="secondary-content"><i class="material-icons">comment</i></a>
+    </li>    <li class="collection-item avatar">
+      <img src="../../image/face3.jpg" alt="" class="circle">
+     <span class="title">Max Mustermann</span>
+      <p>Max.mustermann@gmail.com <br>
+         0173/3546078
+      </p>
+      <a href="#!" class="secondary-content"><i class="material-icons">comment</i></a>
+    </li>    <li class="collection-item avatar">
+      <img src="../../image/face4.jpg" alt="" class="circle">
+     <span class="title">Max Mustermann</span>
+      <p>Max.mustermann@gmail.com <br>
+         0173/3546078
+      </p>
+      <a href="#!" class="secondary-content"><i class="material-icons">comment</i></a>
+    </li>
+  </ul>
 
  
 
