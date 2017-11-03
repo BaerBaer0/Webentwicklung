@@ -35,6 +35,10 @@
         $('#box2_1').toggle();
       });
 
+      $('#box2_1_1').click(function() {
+        $('#box2_1_2').toggle();
+      });
+
       $('#box3').click(function() {
         $('#box3_1').toggle();
       });
@@ -50,9 +54,24 @@
       $('#box4').click(function() {
         $('#box4_1').toggle();
       });
+
       $('#box5').click(function() {
         $('#box5_1').toggle();
       });
+
+      $('#testW').click(function() {
+        if ($('#test1').attr("disabled") === undefined) {
+          $('#test1').attr("disabled", "disabled");
+          $('#test2').attr("disabled", "disabled");
+          $('#test3').attr("disabled", "disabled");
+        } else {
+          $('#test1').removeAttr("disabled");
+          $('#test2').removeAttr("disabled");
+          $('#test3').removeAttr("disabled");
+        }
+
+      });
+
 
     });
   </script>
@@ -152,23 +171,55 @@
               <div class="input-field col s12">
                 <a class="waves-effect waves-light btn">Speichern</a>
               </div>
-
             </form>
+          </div>
+        </div>
+      </div>
+    </div>
 
+    <div><a id="box2" class="btn-floating waves-effect waves-light"><i class="material-icons btn-color">add</i></a><a style="font-size: 15px; color: black"> EDV-Kenntnisse</a>
+      <div id="box2_1" style="margin-Left: 50px; display: none">
+        <a id="box2_1_1" class="btn-floating waves-effect waves-light"><i class="material-icons btn-color">add</i></a><a style="font-size: 15px; color: black"> Betriebssysteme</a>
+        <div id="box2_1_2" style="display: none">
+          <div class="row" style="margin-left: 22px">
+            <form class="col s12">
+              <div class="col s3">
+
+              </div>
+              <div class="col s6">
+                Kenntnisse
+              </div>
+            </form>
+            <br><br>
+            <form class="col s12">
+              <div class="col s3">
+                <input type="checkbox" id="testW" />
+                <label for="testW" class="font-black">Windows</label>
+              </div>
+              <div class="col s6">
+                <form action="#">
+                  <input name="group1" type="radio" id="test1" disabled="disabled" />
+                  <label class="font-black" for="test1">Grundkenntnisse</label>
+                  <input name="group1" type="radio" id="test2" disabled="disabled" />
+                  <label for="test2" class="font-black">Fortgeschritten</label>
+                  <input name="group1" type="radio" id="test3" disabled="disabled" />
+                  <label for="test3" class="font-black">sehr gut</label>
+                </form>
+              </div>
+              <br><br><br>
+              <a class="waves-effect waves-light btn">Speichern</a>
           </div>
 
         </div>
 
-      </div>
 
-      <br>
-      <div><a id="box2" class="btn-floating waves-effect waves-light"><i class="material-icons btn-color">add</i></a><a style="font-size: 15px; color: black"> EDV-Kenntnisse</a>
-        <div id="box2_1" style="display: none">
-          <br>
-          <div class="row">
-            <form class="col s12">
-              <div class="input-field col s6">
-                <select multiple>
+        <br>
+        <br>
+        <br>
+        <div class="row">
+          <form class="col s12">
+            <div class="input-field col s6">
+              <select multiple>
                   <option value="" disabled selected >Bitte auswählen</option>
                   <option value="1">Windows</option>
                   <option value="2">Linux</option>
@@ -176,10 +227,10 @@
                   <option value="4">IOS</option>
                   <option value="5">etc</option>
                 </select>
-                <label>Betriebssysteme:</label>
-              </div>
-              <div class="input-field col s6">
-                <select multiple>
+              <label>Betriebssysteme:</label>
+            </div>
+            <div class="input-field col s6">
+              <select multiple>
                 <option value="" disabled selected>Bitte auswählen</option>
                 <option value="1">JavaScript</option>
                 <option value="2">Java</option>
@@ -188,158 +239,161 @@
                 <option value="5">C</option>
                 <option value="6">etc.</option>
               </select>
-                <label>Programmiersprachen:</label>
-              </div>
-              <div class="input-field col s6">
-                <select multiple>
+              <label>Programmiersprachen:</label>
+            </div>
+            <div class="input-field col s6">
+              <select multiple>
                 <option value="" disabled selected>Bitte auswählen</option>
                 <option value="1">Ruby</option>
                 <option value="2">PHP</option>
                 <option value="3">Python</option>
                 <option value="5">etc</option>
               </select>
-                <label>Skriptsprachen:</label>
+              <label>Skriptsprachen:</label>
+            </div>
+            <div class="input-field col s6">
+              <input id="sonstiges" type="text" class="validate"> <label for="name">Sonstiges: </label>
+            </div>
+            <a class="waves-effect waves-light btn">Speichern</a>
+          </form>
+        </div>
+      </div>
+    </div>
+
+
+
+    <br>
+
+    <div><a id="box3" class="btn-floating waves-effect waves-light"><i class="material-icons btn-color">add</i></a><a style="font-size: 15px; color: black"> Projekt- und Tätigkeitserfahrung</a>
+      <div id="box3_1" style="margin-Left: 50px; display: none">
+        <a id="box3_1_1" class="btn-floating waves-effect waves-light"><i class="material-icons btn-color">add</i></a><a style="font-size: 15px; color: black"> Projekt Kamp-Lintfort</a>
+        <div id="box3_1_2" style="display: none">
+          <div class="row">
+            <form class="col s12">
+              <div class="input-field col s6">
+                <input type="text" class="datepicker"> <label for="bday">Start Datum des Projekts: </label>
               </div>
               <div class="input-field col s6">
-                <input id="sonstiges" type="text" class="validate"> <label for="name">Sonstiges: </label>
+                <input type="text" class="datepicker"> <label for="bday">End Datum des Projekts: </label>
+              </div>
+              <div class="input-field col s6">
+                <input id="email" type="text" class="validate">
+                <label for="email">Ihre Rolle im Projekt: </label>
+              </div>
+              <div class="input-field col s6">
+                <input id="name" type="text" class="validate"> <label for="name">Projekt Beschreibung: </label>
+              </div>
+              <div class="input-field col s6">
+                <input id="name" type="text" class="validate"> <label for="name">Eingesetzte Technologien: </label>
+              </div>
+              <div class="input-field col s6">
+                <input id="name" type="text" class="validate"> <label for="name">Ihre Projektaufgaben: </label>
               </div>
               <a class="waves-effect waves-light btn">Speichern</a>
             </form>
           </div>
         </div>
-      </div>
-      <br>
+        <br>
+        <br>
 
-      <div><a id="box3" class="btn-floating waves-effect waves-light"><i class="material-icons btn-color">add</i></a><a style="font-size: 15px; color: black"> Projekt- und Tätigkeitserfahrung</a>
-        <div id="box3_1" style="margin-Left: 50px; display: none">
-          <a id="box3_1_1" class="btn-floating waves-effect waves-light"><i class="material-icons btn-color">add</i></a><a style="font-size: 15px; color: black"> Projekt Kamp-Lintfort</a>
-          <div id="box3_1_2" style="display: none">
-            <div class="row">
-              <form class="col s12">
-                <div class="input-field col s6">
-                  <input type="text" class="datepicker"> <label for="bday">Start Datum des Projekts: </label>
-                </div>
-                <div class="input-field col s6">
-                  <input type="text" class="datepicker"> <label for="bday">End Datum des Projekts: </label>
-                </div>
-                <div class="input-field col s6">
-                  <input id="email" type="text" class="validate">
-                  <label for="email">Ihre Rolle im Projekt: </label>
-                </div>
-                <div class="input-field col s6">
-                  <input id="name" type="text" class="validate"> <label for="name">Projekt Beschreibung: </label>
-                </div>
-                <div class="input-field col s6">
-                  <input id="name" type="text" class="validate"> <label for="name">Eingesetzte Technologien: </label>
-                </div>
-                <div class="input-field col s6">
-                  <input id="name" type="text" class="validate"> <label for="name">Ihre Projektaufgaben: </label>
-                </div>
-                <a class="waves-effect waves-light btn">Speichern</a>
-              </form>
-            </div>
-          </div>
-          <br>
-          <br>
-
-          <a id="box3_2_1" class="btn-floating waves-effect waves-light"><i class="material-icons btn-color">add</i></a><a style="font-size: 15px; color: black"> Projekt Moers</a>
-          <div id="box3_2_2" style="display: none">
-            <div class="row">
-              <form class="col s12">
-                <div class="input-field col s6">
-                  <input type="text" class="datepicker"> <label for="bday">Start Datum des Projekts: </label>
-                </div>
-                <div class="input-field col s6">
-                  <input type="text" class="datepicker"> <label for="bday">End Datum des Projekts: </label>
-                </div>
-                <div class="input-field col s6">
-                  <input id="email" type="text" class="validate">
-                  <label for="email">Ihre Rolle im Projekt: </label>
-                </div>
-                <div class="input-field col s6">
-                  <input id="name" type="text" class="validate"> <label for="name">Projekt Beschreibung: </label>
-                </div>
-                <div class="input-field col s6">
-                  <input id="name" type="text" class="validate"> <label for="name">Eingesetzte Technologien: </label>
-                </div>
-                <div class="input-field col s6">
-                  <input id="name" type="text" class="validate"> <label for="name">Ihre Projektaufgaben: </label>
-                </div>
-                <a class="waves-effect waves-light btn">Speichern</a>
-              </form>
-            </div>
-          </div>
-          <br> <br>
-          <a class="waves-effect waves-light btn">Neues Projekt hinzufügen</a>
-        </div>
-      </div>
-
-      <br>
-      <div><a id="box4" class="btn-floating waves-effect waves-light"><i class="material-icons btn-color">add</i></a><a style="font-size: 15px; color: black"> Zertifizierungen</a>
-        <div id="box4_1" style="display: none">
-          <div class="row">
-            <form class="col s12">
-
-
-              <div class="input-field col s6">
-                <input id="name" type="text" class="validate">
-                <label for="name">Erworbene Zertifikate unter Angabe des Erwerbdatums eingeben</label>
-              </div>
-              <div class="col s6">
-                <a class="btn-floating waves-effect waves-light"><i class="material-icons btn-color">add</i></a>
-              </div>
-              <div class="col s12">
-                <a class="waves-effect waves-light btn">Speichern</a>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-      <br>
-
-      <div><a id="box5" class="btn-floating waves-effect waves-light"><i class="material-icons btn-color">add</i></a><a style="font-size: 15px; color: black"> Branchenkenntnisse</a>
-        <div id="box5_1" style="display: none">
+        <a id="box3_2_1" class="btn-floating waves-effect waves-light"><i class="material-icons btn-color">add</i></a><a style="font-size: 15px; color: black"> Projekt Moers</a>
+        <div id="box3_2_2" style="display: none">
           <div class="row">
             <form class="col s12">
               <div class="input-field col s6">
-                <input id="name" type="text" class="validate">
-                <label for="name">In welchen Branchen haben sie bereits gearbeitet?</label>
+                <input type="text" class="datepicker"> <label for="bday">Start Datum des Projekts: </label>
               </div>
-              <div class="col s6">
-                <a class="btn-floating waves-effect waves-light"><i class="material-icons btn-color">add</i></a>
+              <div class="input-field col s6">
+                <input type="text" class="datepicker"> <label for="bday">End Datum des Projekts: </label>
               </div>
-              <div class="col s12">
-                <a class="waves-effect waves-light btn">Speichern</a>
+              <div class="input-field col s6">
+                <input id="email" type="text" class="validate">
+                <label for="email">Ihre Rolle im Projekt: </label>
               </div>
+              <div class="input-field col s6">
+                <input id="name" type="text" class="validate"> <label for="name">Projekt Beschreibung: </label>
+              </div>
+              <div class="input-field col s6">
+                <input id="name" type="text" class="validate"> <label for="name">Eingesetzte Technologien: </label>
+              </div>
+              <div class="input-field col s6">
+                <input id="name" type="text" class="validate"> <label for="name">Ihre Projektaufgaben: </label>
+              </div>
+              <a class="waves-effect waves-light btn">Speichern</a>
             </form>
           </div>
         </div>
+        <br> <br>
+        <a class="waves-effect waves-light btn">Neues Projekt hinzufügen</a>
       </div>
-      <br>
     </div>
-    <p>
-      <a href="index.html" class="waves-effect waves-light btn">zurück</a>
+
+    <br>
+    <div><a id="box4" class="btn-floating waves-effect waves-light"><i class="material-icons btn-color">add</i></a><a style="font-size: 15px; color: black"> Zertifizierungen</a>
+      <div id="box4_1" style="display: none">
+        <div class="row">
+          <form class="col s12">
+
+
+            <div class="input-field col s6">
+              <input id="name" type="text" class="validate">
+              <label for="name">Erworbene Zertifikate unter Angabe des Erwerbdatums eingeben</label>
+            </div>
+            <div class="col s6">
+              <a class="btn-floating waves-effect waves-light"><i class="material-icons btn-color">add</i></a>
+            </div>
+            <div class="col s12">
+              <a class="waves-effect waves-light btn">Speichern</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <br>
+
+    <div><a id="box5" class="btn-floating waves-effect waves-light"><i class="material-icons btn-color">add</i></a><a style="font-size: 15px; color: black"> Branchenkenntnisse</a>
+      <div id="box5_1" style="display: none">
+        <div class="row">
+          <form class="col s12">
+            <div class="input-field col s6">
+              <input id="name" type="text" class="validate">
+              <label for="name">In welchen Branchen haben sie bereits gearbeitet?</label>
+            </div>
+            <div class="col s6">
+              <a class="btn-floating waves-effect waves-light"><i class="material-icons btn-color">add</i></a>
+            </div>
+            <div class="col s12">
+              <a class="waves-effect waves-light btn">Speichern</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <br>
   </div>
-
-  <footer class="page-footer">
-    <div class="container">
-      <div class="row">
-        <div class="col l6 s12">
-          <h5 class="white-text">Kontakt</h5>
-          <p class="grey-text text-lighten-4">
-            Kontakt Interaction Room GmbH <br> Veronikastr. 34 <br> 45131 Essen <br> Tel. +49 (0) 201 87 42 17 27<br> info@interaction-room.de
-          </p>
-        </div>
-        <div class="col l6 s12">
-          <h5 class="white-text">Anfragen</h5>
-          <p class="grey-text text-lighten-4">
-            Frau M&uuml;ller <br> Tel. +49 (0) 201 87 42 17 27<br> a.m@interaction-room.de
-          </p>
-        </div>
-      </div>
+  <p>
+    <a href="index.html" class="waves-effect waves-light btn">zurück</a>
     </div>
 
-  </footer>
+    <footer class="page-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">Kontakt</h5>
+            <p class="grey-text text-lighten-4">
+              Kontakt Interaction Room GmbH <br> Veronikastr. 34 <br> 45131 Essen <br> Tel. +49 (0) 201 87 42 17 27<br> info@interaction-room.de
+            </p>
+          </div>
+          <div class="col l6 s12">
+            <h5 class="white-text">Anfragen</h5>
+            <p class="grey-text text-lighten-4">
+              Frau M&uuml;ller <br> Tel. +49 (0) 201 87 42 17 27<br> a.m@interaction-room.de
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </footer>
 
 </body>
 

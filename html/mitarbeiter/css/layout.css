@@ -9,6 +9,10 @@ main {
   flex: 1 0 auto;
 }
 
+.font-black {
+  color: black;
+}
+
 .btn, .btn-large {
   color: #000;
   background-color: #fff;
