@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css" />
+  <link type="text/css" rel="stylesheet" href="css/layout.css" />
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <script>
+    $(document).ready(function() {
+
+      $('#TESTBUTTON').click(function() {
+        console.log($('[name="groupBW"]:checked').attr('id'));
+        console.log($('[name="groupBW"]:checked').val());
+      });
+
+
+      $('select').material_select();
+
+
+
+      $('.datepicker').pickadate({
+        selectMonths: true, // Creates a dropdown to control month
+        selectYears: 100, // Creates a dropdown of 15 years to control year,
+        today: 'Today',
+        clear: 'Clear',
+        close: 'Ok',
+        closeOnSelect: false // Close upon selecting a date,
+      });
+
+      $('#box1').click(function() {
+        $('#box1_1').toggle();
+      });
+
+      $('#box2').click(function() {
+        $('#box2_1').toggle();
+      });
+
+      $('#box2_1_1').click(function() {
+        $('#box2_1_2').toggle();
+      });
+
+      $('#box2_2_1').click(function() {
+        $('#box2_2_2').toggle();
+      });
+
+      $('#box3').click(function() {
+        $('#box3_1').toggle();
+      });
+
+      $('#box3_1_1').click(function() {
+        $('#box3_1_2').toggle();
+      });
+
+      $('#box3_2_1').click(function() {
+        $('#box3_2_2').toggle();
+      });
+
+      $('#box4').click(function() {
+        $('#box4_1').toggle();
+      });
+
+      $('#box5').click(function() {
+        $('#box5_1').toggle();
+      });
+
+      var betriebssystemeArray = ["BW","BL","BM","BI"];
+
+      betriebssystemeArray.forEach(function(data) {
+        console.log(data);
+        $('#checkbox' + data).click(function() {
+          if ($('#' + data + '1').attr("disabled") === undefined) {
+            $('#' + data + '1').attr("disabled", "disabled");
+            $('#' + data + '2').attr("disabled", "disabled");
+            $('#' + data + '3').attr("disabled", "disabled");
+          } else {
+            $('#' + data + '1').attr("checked", "checked");
+            $('#' + data + '1').removeAttr("disabled");
+            $('#' + data + '2').removeAttr("disabled");
+            $('#' + data + '3').removeAttr("disabled");
+          }
+
+        });
+      });
+
+      var programmiersprachenArray = ["PJ","PJS","PCP","PC"];
+
+      programmiersprachenArray.forEach(function(data) {
+        console.log(data);
+        $('#checkbox' + data).click(function() {
+          if ($('#' + data + '1').attr("disabled") === undefined) {
+            $('#' + data + '1').attr("disabled", "disabled");
+            $('#' + data + '2').attr("disabled", "disabled");
+            $('#' + data + '3').attr("disabled", "disabled");
+          } else {
+            $('#' + data + '1').attr("checked", "checked");
+            $('#' + data + '1').removeAttr("disabled");
+            $('#' + data + '2').removeAttr("disabled");
+            $('#' + data + '3').removeAttr("disabled");
+          }
+
+        });
+      });
+
+
+
+    });
+  </script>
+</head>
+
+<body>
+  <nav class="light-blue lighten-1" role="navigation">
+    <nav>
+      <div class="nav-wrapper">
+        <a href="../../index.html" class="brand-logo"><img
+          src="../../image/logo.png" width="100%" height="20%"></a>
+        <ul class="right hide-on-med-and-down">
+          <a href="../../index.html" class="right-align">Logout</a>
+        </ul>
+      </div>
+    </nav>
+  </nav>
+
+
+
+
+
+  <div class="mitarbeiter">
+
+
+    <h3 class="header">Skill-Profile Bearbeiten</h3>
+    <div class="row">
+      <div class="col s12">
+        <div class="col s1">
+
+          <div class="card-image">
+            <img class="circle responsive-img" src="image/potrait.jpg">
+          </div>
+        </div>
+        <div class="col s6">
+          <br><br>
+          <h5>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Max Mustermann</h5>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="row">
+      <div><a id="box1" class="btn-floating waves-effect waves-light"><i class="material-icons btn-color">add</i></a> <a style="font-size: 15px; color: black">Persönliche Daten</a>
+        <div id="box1_1" style="display: none">
+          <br>
+          <div class="row">
+            <form class="col s12">
+              <div class="input-field col s6">
+                <input id="name" type="text" class="validate" value="Mustermann">
+                <label for="name">Name: </label>
+              </div>
+              <div class="input-field col s6">
+                <input id="vname" type="text" class="validate" value="Max">
+                <label for="name">Vorname: </label>
+              </div>
+              <div class="input-field col s6">
+                <input id="email" type="text" class="validate" value="maxmustermann@info.de">
+                <label for="email">Email: </label>
+              </div>
+              <div class="input-field col s6">
+                <input type="text" class="datepicker" value="05.09.1982"> <label for="bday">Geburtstag: </label>
+              </div>
+              <div class="input-field col s6">
+                <input id="beruf" type="text" class="validate" value="Softwareentwickler"> <label for="beruf">Beruf: </label>
+              </div>
+              <div class="input-field col s6">
+                <input id="beruf" type="text" class="validate" value="Hochschule Rhein-Waal, Bachelor Medien -und Kommunikationsinformatik"> <label for="beruf">Abgeschlossene Hochschul- und Berufsausbildungen </label>
+              </div>
+              <br>
+              <div class="input-field col s6">
+                <select multiple>
+                <option value="" disabled selected>Bitte auswählen</option>
+                <option value="1">Deutsch</option>
+                <option value="2">Englisch</option>
+                <option value="3">Französisch</option>
+                <option value="4">etc.</option>
+              </select>
+                <label>Sprachen:</label>
+              </div>
+              <br>
+              <div class="input-field col s6">
+                <input id="beschreibung" type="text" class="validate"> <label for="beschreibung">Beschreiben Sie sich in wenigen kurzen Sätzen </label>
+              </div>
+              <div class="input-field col s12">
+                <div class="file-field input-field">
+                  <div class="waves-effect waves-light btn">
+                    <span>Browse</span>
+                    <input type="file" />
+                  </div>
+                  <div class="file-path-wrapper">
+                    <input class="file-path validate" type="text" placeholder="Foto hochladen" />
+                  </div>
+                </div>
+              </div>
+              <div class="input-field col s12">
+                <a class="waves-effect waves-light btn">Speichern</a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div><a id="box2" class="btn-floating waves-effect waves-light"><i class="material-icons btn-color">add</i></a><a style="font-size: 15px; color: black"> EDV-Kenntnisse</a>
+      <div id="box2_1" style=" display: none">
+<br>
+          <div class="row">
+            <form class="col s12">
+              <div class="col s3">
+                <b style="font-size: 16px">Betriebssysteme</b>
+              </div>
+              <div class="col s9">
+                <div class="col s3">
+                  Grundkenntnisse
+                </div>
+                <div class="col s3">
+                  Fortgeschritten
+                </div>
+                <div class="col s3">
+                  sehr gut
+                </div>
+              </div>
+            </form>
+            <br><br>
+
+            <!--WINDOWS-->
+            <form class="col s12">
+              <div class="col s3">
+                <input type="checkbox" id="checkboxBW" />
+                <label for="checkboxBW" class="font-black">Windows</label>
+              </div>
+              <div class="col s9">
+                <div class="col s3">
+                  <input name="groupBW" type="radio" id="BW1" disabled="disabled" value="1" />
+                  <label for="BW1" class="font-black"></label>
+                </div>
+                <div class="col s3">
+                  <input name="groupBW" type="radio" id="BW2" disabled="disabled" value="2" />
+                  <label for="BW2" class="font-black"></label>
+                </div>
+                <div class="col s3">
+                  <input name="groupBW" type="radio" id="BW3" disabled="disabled" value="3" />
+                  <label for="BW3" class="font-black"></label>
+                </div>
+              </div>
+            </form>
+
+            <!--LINUX-->
+            <form class="col s12">
+              <div class="col s3">
+                <input type="checkbox" id="checkboxBL" />
+                <label for="checkboxBL" class="font-black">Linux</label>
+              </div>
+              <div class="col s9">
+                <div class="col s3">
+                  <input name="groupBL" type="radio" id="BL1" disabled="disabled" value="1" />
+                  <label for="BL1" class="font-black"></label>
+                </div>
+                <div class="col s3">
+                  <input name="groupBL" type="radio" id="BL2" disabled="disabled" value="2" />
+                  <label for="BL2" class="font-black"></label>
+                </div>
+                <div class="col s3">
+                  <input name="groupBL" type="radio" id="BL3" disabled="disabled" value="3" />
+                  <label for="BL3" class="font-black"></label>
+                </div>
+              </div>
+            </form>
+
+            <!--MAC OS-->
+            <form class="col s12">
+              <div class="col s3">
+                <input type="checkbox" id="checkboxBM" />
+                <label for="checkboxBM" class="font-black">MAC OS</label>
+              </div>
+              <div class="col s9">
+                <div class="col s3">
+                  <input name="groupBM" type="radio" id="BM1" disabled="disabled" value="1" />
+                  <label for="BM1" class="font-black"></label>
+                </div>
+                <div class="col s3">
+                  <input name="groupBM" type="radio" id="BM2" disabled="disabled" value="2" />
+                  <label for="BM2" class="font-black"></label>
+                </div>
+                <div class="col s3">
+                  <input name="groupBM" type="radio" id="BM3" disabled="disabled" value="3" />
+                  <label for="BM3" class="font-black"></label>
+                </div>
+              </div>
+            </form>
+
+            <!--IOS-->
+            <form class="col s12">
+              <div class="col s3">
+                <input type="checkbox" id="checkboxBI" />
+                <label for="checkboxBI" class="font-black">IOS</label>
+              </div>
+              <div class="col s9">
+                <div class="col s3">
+                  <input name="groupBI" type="radio" id="BI1" disabled="disabled" value="1" />
+                  <label for="BI1" class="font-black"></label>
+                </div>
+                <div class="col s3">
+                  <input name="groupBI" type="radio" id="BI2" disabled="disabled" value="2" />
+                  <label for="BI2" class="font-black"></label>
+                </div>
+                <div class="col s3">
+                  <input name="groupBI" type="radio" id="BI3" disabled="disabled" value="3" />
+                  <label for="BI3" class="font-black"></label>
+                </div>
+              </div>
+            </form>
+            <br><br><br>
+          </div>
+
+
+
+
+          <div class="row">
+            <form class="col s12">
+              <div class="col s3">
+                <b style="font-size: 16px">Programmiersprachen</b>
+              </div>
+              <div class="col s9">
+                <div class="col s3">
+                  Grundkenntnisse
+                </div>
+                <div class="col s3">
+                  Fortgeschritten
+                </div>
+                <div class="col s3">
+                  sehr gut
+                </div>
+              </div>
+            </form>
+            <br><br>
+
+            <!--JAVA-->
+            <form class="col s12">
+              <div class="col s3">
+                <input type="checkbox" id="checkboxPJ" />
+                <label for="checkboxPJ" class="font-black">Java</label>
+              </div>
+              <div class="col s9">
+                <div class="col s3">
+                  <input name="groupPJ" type="radio" id="PJ1" disabled="disabled" value="1" />
+                  <label for="PJ1" class="font-black"></label>
+                </div>
+                <div class="col s3">
+                  <input name="groupPJ" type="radio" id="PJ2" disabled="disabled" value="2" />
+                  <label for="PJ2" class="font-black"></label>
+                </div>
+                <div class="col s3">
+                  <input name="groupPJ" type="radio" id="PJ3" disabled="disabled" value="3" />
+                  <label for="PJ3" class="font-black"></label>
+                </div>
+              </div>
+            </form>
+
+            <!--JS-->
+            <form class="col s12">
+              <div class="col s3">
+                <input type="checkbox" id="checkboxPJS" />
+                <label for="checkboxPJS" class="font-black">Javascript</label>
+              </div>
+              <div class="col s9">
+                <div class="col s3">
+                  <input name="groupPJS" type="radio" id="PJS1" disabled="disabled" value="1" />
+                  <label for="PJS1" class="font-black"></label>
+                </div>
+                <div class="col s3">
+                  <input name="groupPJS" type="radio" id="PJS2" disabled="disabled" value="2" />
+                  <label for="PJS2" class="font-black"></label>
+                </div>
+                <div class="col s3">
+                  <input name="groupPJS" type="radio" id="PJS3" disabled="disabled" value="3" />
+                  <label for="PJS3" class="font-black"></label>
+                </div>
+              </div>
+            </form>
+
+            <!--C++-->
+            <form class="col s12">
+              <div class="col s3">
+                <input type="checkbox" id="checkboxPCP" />
+                <label for="checkboxPCP" class="font-black">C++</label>
+              </div>
+              <div class="col s9">
+                <div class="col s3">
+                  <input name="groupPM" type="radio" id="PCP1" disabled="disabled" value="1" />
+                  <label for="PCP1" class="font-black"></label>
+                </div>
+                <div class="col s3">
+                  <input name="groupPM" type="radio" id="PCP2" disabled="disabled" value="2" />
+                  <label for="PCP2" class="font-black"></label>
+                </div>
+                <div class="col s3">
+                  <input name="groupPM" type="radio" id="PCP3" disabled="disabled" value="3" />
+                  <label for="PCP3" class="font-black"></label>
+                </div>
+              </div>
+            </form>
+
+            <!--C-->
+            <form class="col s12">
+              <div class="col s3">
+                <input type="checkbox" id="checkboxPC" />
+                <label for="checkboxPC" class="font-black">C</label>
+              </div>
+              <div class="col s9">
+                <div class="col s3">
+                  <input name="groupPC" type="radio" id="PC1" disabled="disabled" value="1" />
+                  <label for="PC1" class="font-black"></label>
+                </div>
+                <div class="col s3">
+                  <input name="groupPC" type="radio" id="PC2" disabled="disabled" value="2" />
+                  <label for="PC2" class="font-black"></label>
+                </div>
+                <div class="col s3">
+                  <input name="groupPC" type="radio" id="PC3" disabled="disabled" value="3" />
+                  <label for="PC3" class="font-black"></label>
+                </div>
+              </div>
+            </form>
+            <br><br><br>
+          </div>
+
+          <div class="row">
+            <form class="col s12">
+              <div class="col s3">
+                <b style="font-size: 16px">Programmiersprachen</b>
+              </div>
+              <div class="col s9">
+                <div class="col s3">
+                  Grundkenntnisse
+                </div>
+                <div class="col s3">
+                  Fortgeschritten
+                </div>
+                <div class="col s3">
+                  sehr gut
+                </div>
+              </div>
+            </form>
+            <br><br>
+
+            <!--JAVA-->
+            <form class="col s12">
+              <div class="col s3">
+                <input type="checkbox" id="checkboxPJ" />
+                <label for="checkboxPJ" class="font-black">Java</label>
+              </div>
+              <div class="col s9">
+                <div class="col s3">
+                  <input name="groupPJ" type="radio" id="PJ1" disabled="disabled" value="1" />
+                  <label for="PJ1" class="font-black"></label>
+                </div>
+                <div class="col s3">
+                  <input name="groupPJ" type="radio" id="PJ2" disabled="disabled" value="2" />
+                  <label for="PJ2" class="font-black"></label>
+                </div>
+                <div class="col s3">
+                  <input name="groupPJ" type="radio" id="PJ3" disabled="disabled" value="3" />
+                  <label for="PJ3" class="font-black"></label>
+                </div>
+              </div>
+            </form>
+
+            <!--JS-->
+            <form class="col s12">
+              <div class="col s3">
+                <input type="checkbox" id="checkboxPJS" />
+                <label for="checkboxPJS" class="font-black">Javascript</label>
+              </div>
+              <div class="col s9">
+                <div class="col s3">
+                  <input name="groupPJS" type="radio" id="PJS1" disabled="disabled" value="1" />
+                  <label for="PJS1" class="font-black"></label>
+                </div>
+                <div class="col s3">
+                  <input name="groupPJS" type="radio" id="PJS2" disabled="disabled" value="2" />
+                  <label for="PJS2" class="font-black"></label>
+                </div>
+                <div class="col s3">
+                  <input name="groupPJS" type="radio" id="PJS3" disabled="disabled" value="3" />
+                  <label for="PJS3" class="font-black"></label>
+                </div>
+              </div>
+            </form>
+
+            <!--C++-->
+            <form class="col s12">
+              <div class="col s3">
+                <input type="checkbox" id="checkboxPCP" />
+                <label for="checkboxPCP" class="font-black">C++</label>
+              </div>
+              <div class="col s9">
+                <div class="col s3">
+                  <input name="groupPM" type="radio" id="PCP1" disabled="disabled" value="1" />
+                  <label for="PCP1" class="font-black"></label>
+                </div>
+                <div class="col s3">
+                  <input name="groupPM" type="radio" id="PCP2" disabled="disabled" value="2" />
+                  <label for="PCP2" class="font-black"></label>
+                </div>
+                <div class="col s3">
+                  <input name="groupPM" type="radio" id="PCP3" disabled="disabled" value="3" />
+                  <label for="PCP3" class="font-black"></label>
+                </div>
+              </div>
+            </form>
+
+            <!--C-->
+            <form class="col s12">
+              <div class="col s3">
+                <input type="checkbox" id="checkboxPC" />
+                <label for="checkboxPC" class="font-black">C</label>
+              </div>
+              <div class="col s9">
+                <div class="col s3">
+                  <input name="groupPC" type="radio" id="PC1" disabled="disabled" value="1" />
+                  <label for="PC1" class="font-black"></label>
+                </div>
+                <div class="col s3">
+                  <input name="groupPC" type="radio" id="PC2" disabled="disabled" value="2" />
+                  <label for="PC2" class="font-black"></label>
+                </div>
+                <div class="col s3">
+                  <input name="groupPC" type="radio" id="PC3" disabled="disabled" value="3" />
+                  <label for="PC3" class="font-black"></label>
+                </div>
+              </div>
+            </form>
+            <br><br><br>
+          </div>
+
+          <div class="row">
+            <form class="col s12">
+              <div class="col s3">
+                <b style="font-size: 16px">Programmiersprachen</b>
+              </div>
+              <div class="col s9">
+                <div class="col s3">
+                  Grundkenntnisse
+                </div>
+                <div class="col s3">
+                  Fortgeschritten
+                </div>
+                <div class="col s3">
+                  sehr gut
+                </div>
+              </div>
+            </form>
+            <br><br>
+
+            <!--JAVA-->
+            <form class="col s12">
+              <div class="col s3">
+                <input type="checkbox" id="checkboxPJ" />
+                <label for="checkboxPJ" class="font-black">Java</label>
+              </div>
+              <div class="col s9">
+                <div class="col s3">
+                  <input name="groupPJ" type="radio" id="PJ1" disabled="disabled" value="1" />
+                  <label for="PJ1" class="font-black"></label>
+                </div>
+                <div class="col s3">
+                  <input name="groupPJ" type="radio" id="PJ2" disabled="disabled" value="2" />
+                  <label for="PJ2" class="font-black"></label>
+                </div>
+                <div class="col s3">
+                  <input name="groupPJ" type="radio" id="PJ3" disabled="disabled" value="3" />
+                  <label for="PJ3" class="font-black"></label>
+                </div>
+              </div>
+            </form>
+
+            <!--JS-->
+            <form class="col s12">
+              <div class="col s3">
+                <input type="checkbox" id="checkboxPJS" />
+                <label for="checkboxPJS" class="font-black">Javascript</label>
+              </div>
+              <div class="col s9">
+                <div class="col s3">
+                  <input name="groupPJS" type="radio" id="PJS1" disabled="disabled" value="1" />
+                  <label for="PJS1" class="font-black"></label>
+                </div>
+                <div class="col s3">
+                  <input name="groupPJS" type="radio" id="PJS2" disabled="disabled" value="2" />
+                  <label for="PJS2" class="font-black"></label>
+                </div>
+                <div class="col s3">
+                  <input name="groupPJS" type="radio" id="PJS3" disabled="disabled" value="3" />
+                  <label for="PJS3" class="font-black"></label>
+                </div>
+              </div>
+            </form>
+
+            <!--C++-->
+            <form class="col s12">
+              <div class="col s3">
+                <input type="checkbox" id="checkboxPCP" />
+                <label for="checkboxPCP" class="font-black">C++</label>
+              </div>
+              <div class="col s9">
+                <div class="col s3">
+                  <input name="groupPM" type="radio" id="PCP1" disabled="disabled" value="1" />
+                  <label for="PCP1" class="font-black"></label>
+                </div>
+                <div class="col s3">
+                  <input name="groupPM" type="radio" id="PCP2" disabled="disabled" value="2" />
+                  <label for="PCP2" class="font-black"></label>
+                </div>
+                <div class="col s3">
+                  <input name="groupPM" type="radio" id="PCP3" disabled="disabled" value="3" />
+                  <label for="PCP3" class="font-black"></label>
+                </div>
+              </div>
+            </form>
+
+            <!--C-->
+            <form class="col s12">
+              <div class="col s3">
+                <input type="checkbox" id="checkboxPC" />
+                <label for="checkboxPC" class="font-black">C</label>
+              </div>
+              <div class="col s9">
+                <div class="col s3">
+                  <input name="groupPC" type="radio" id="PC1" disabled="disabled" value="1" />
+                  <label for="PC1" class="font-black"></label>
+                </div>
+                <div class="col s3">
+                  <input name="groupPC" type="radio" id="PC2" disabled="disabled" value="2" />
+                  <label for="PC2" class="font-black"></label>
+                </div>
+                <div class="col s3">
+                  <input name="groupPC" type="radio" id="PC3" disabled="disabled" value="3" />
+                  <label for="PC3" class="font-black"></label>
+                </div>
+              </div>
+            </form>
+            <br><br><br>
+          </div>
+          <a class="waves-effect waves-light btn">Speichern</a>
+
+        </div>
+
+
+
+    </div>
+
+
+
+    <br>
+
+    <div><a id="box3" class="btn-floating waves-effect waves-light"><i class="material-icons btn-color">add</i></a><a style="font-size: 15px; color: black"> Projekt- und Tätigkeitserfahrung</a>
+      <div id="box3_1" style="margin-Left: 50px; display: none">
+        <a id="box3_1_1" class="btn-floating waves-effect waves-light"><i class="material-icons btn-color">add</i></a><a style="font-size: 15px; color: black"> Projekt Kamp-Lintfort</a>
+        <div id="box3_1_2" style="display: none">
+          <div class="row">
+            <form class="col s12">
+              <div class="input-field col s6">
+                <input type="text" class="datepicker"> <label for="bday">Start Datum des Projekts: </label>
+              </div>
+              <div class="input-field col s6">
+                <input type="text" class="datepicker"> <label for="bday">End Datum des Projekts: </label>
+              </div>
+              <div class="input-field col s6">
+                <input id="email" type="text" class="validate">
+                <label for="email">Ihre Rolle im Projekt: </label>
+              </div>
+              <div class="input-field col s6">
+                <input id="name" type="text" class="validate"> <label for="name">Projekt Beschreibung: </label>
+              </div>
+              <div class="input-field col s6">
+                <input id="name" type="text" class="validate"> <label for="name">Eingesetzte Technologien: </label>
+              </div>
+              <div class="input-field col s6">
+                <input id="name" type="text" class="validate"> <label for="name">Ihre Projektaufgaben: </label>
+              </div>
+              <a class="waves-effect waves-light btn">Speichern</a>
+            </form>
+          </div>
+        </div>
+        <br>
+        <br>
+
+        <a id="box3_2_1" class="btn-floating waves-effect waves-light"><i class="material-icons btn-color">add</i></a><a style="font-size: 15px; color: black"> Projekt Moers</a>
+        <div id="box3_2_2" style="display: none">
+          <div class="row">
+            <form class="col s12">
+              <div class="input-field col s6">
+                <input type="text" class="datepicker"> <label for="bday">Start Datum des Projekts: </label>
+              </div>
+              <div class="input-field col s6">
+                <input type="text" class="datepicker"> <label for="bday">End Datum des Projekts: </label>
+              </div>
+              <div class="input-field col s6">
+                <input id="email" type="text" class="validate">
+                <label for="email">Ihre Rolle im Projekt: </label>
+              </div>
+              <div class="input-field col s6">
+                <input id="name" type="text" class="validate"> <label for="name">Projekt Beschreibung: </label>
+              </div>
+              <div class="input-field col s6">
+                <input id="name" type="text" class="validate"> <label for="name">Eingesetzte Technologien: </label>
+              </div>
+              <div class="input-field col s6">
+                <input id="name" type="text" class="validate"> <label for="name">Ihre Projektaufgaben: </label>
+              </div>
+              <a class="waves-effect waves-light btn">Speichern</a>
+            </form>
+          </div>
+        </div>
+        <br> <br>
+        <a class="waves-effect waves-light btn">Neues Projekt hinzufügen</a>
+      </div>
+    </div>
+
+    <br>
+    <div><a id="box4" class="btn-floating waves-effect waves-light"><i class="material-icons btn-color">add</i></a><a style="font-size: 15px; color: black"> Zertifizierungen</a>
+      <div id="box4_1" style="display: none">
+        <div class="row">
+          <form class="col s12">
+
+
+            <div class="input-field col s6">
+              <input id="name" type="text" class="validate">
+              <label for="name">Erworbene Zertifikate unter Angabe des Erwerbdatums eingeben</label>
+            </div>
+            <div class="col s6">
+              <a class="btn-floating waves-effect waves-light"><i class="material-icons btn-color">add</i></a>
+            </div>
+            <div class="col s12">
+              <a class="waves-effect waves-light btn">Speichern</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <br>
+
+    <div><a id="box5" class="btn-floating waves-effect waves-light"><i class="material-icons btn-color">add</i></a><a style="font-size: 15px; color: black"> Branchenkenntnisse</a>
+      <div id="box5_1" style="display: none">
+        <div class="row">
+          <form class="col s12">
+            <div class="input-field col s6">
+              <input id="name" type="text" class="validate">
+              <label for="name">In welchen Branchen haben sie bereits gearbeitet?</label>
+            </div>
+            <div class="col s6">
+              <a class="btn-floating waves-effect waves-light"><i class="material-icons btn-color">add</i></a>
+            </div>
+            <div class="col s12">
+              <a class="waves-effect waves-light btn">Speichern</a>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <br>
+  </div>
+  <p>
+    <a href="index.html" class="waves-effect waves-light btn">zurück</a>
+    </div>
+
+    <footer class="page-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">Kontakt</h5>
+            <p class="grey-text text-lighten-4">
+              Kontakt Interaction Room GmbH <br> Veronikastr. 34 <br> 45131 Essen <br> Tel. +49 (0) 201 87 42 17 27<br> info@interaction-room.de
+            </p>
+          </div>
+          <div class="col l6 s12">
+            <h5 class="white-text">Anfragen</h5>
+            <p class="grey-text text-lighten-4">
+              Frau M&uuml;ller <br> Tel. +49 (0) 201 87 42 17 27<br> a.m@interaction-room.de
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </footer>
+
+</body>
+
+</html>
