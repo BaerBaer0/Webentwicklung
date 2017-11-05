@@ -14,6 +14,13 @@
 
   <script>
     $(document).ready(function() {
+
+      $('#TESTBUTTON').click(function() {
+        console.log($('[name="groupBW"]:checked').attr('id'));
+        console.log($('[name="groupBW"]:checked').val());
+      });
+
+
       $('select').material_select();
 
 
@@ -39,6 +46,10 @@
         $('#box2_1_2').toggle();
       });
 
+      $('#box2_2_1').click(function() {
+        $('#box2_2_2').toggle();
+      });
+
       $('#box3').click(function() {
         $('#box3_1').toggle();
       });
@@ -59,18 +70,44 @@
         $('#box5_1').toggle();
       });
 
-      $('#testW').click(function() {
-        if ($('#test1').attr("disabled") === undefined) {
-          $('#test1').attr("disabled", "disabled");
-          $('#test2').attr("disabled", "disabled");
-          $('#test3').attr("disabled", "disabled");
-        } else {
-          $('#test1').removeAttr("disabled");
-          $('#test2').removeAttr("disabled");
-          $('#test3').removeAttr("disabled");
-        }
+      var betriebssystemeArray = ["BW","BL","BM","BI"];
 
+      betriebssystemeArray.forEach(function(data) {
+        console.log(data);
+        $('#checkbox' + data).click(function() {
+          if ($('#' + data + '1').attr("disabled") === undefined) {
+            $('#' + data + '1').attr("disabled", "disabled");
+            $('#' + data + '2').attr("disabled", "disabled");
+            $('#' + data + '3').attr("disabled", "disabled");
+          } else {
+            $('#' + data + '1').attr("checked", "checked");
+            $('#' + data + '1').removeAttr("disabled");
+            $('#' + data + '2').removeAttr("disabled");
+            $('#' + data + '3').removeAttr("disabled");
+          }
+
+        });
       });
+
+      var programmiersprachenArray = ["PJ","PJS","PCP","PC"];
+
+      programmiersprachenArray.forEach(function(data) {
+        console.log(data);
+        $('#checkbox' + data).click(function() {
+          if ($('#' + data + '1').attr("disabled") === undefined) {
+            $('#' + data + '1').attr("disabled", "disabled");
+            $('#' + data + '2').attr("disabled", "disabled");
+            $('#' + data + '3').attr("disabled", "disabled");
+          } else {
+            $('#' + data + '1').attr("checked", "checked");
+            $('#' + data + '1').removeAttr("disabled");
+            $('#' + data + '2').removeAttr("disabled");
+            $('#' + data + '3').removeAttr("disabled");
+          }
+
+        });
+      });
+
 
 
     });
@@ -186,77 +223,229 @@
               <div class="col s3">
 
               </div>
-              <div class="col s6">
-                Kenntnisse
+              <div class="col s9">
+                <div class="col s3">
+                  Grundkenntnisse
+                </div>
+                <div class="col s3">
+                  Fortgeschritten
+                </div>
+                <div class="col s3">
+                  sehr gut
+                </div>
               </div>
             </form>
             <br><br>
+
+            <!--WINDOWS-->
             <form class="col s12">
               <div class="col s3">
-                <input type="checkbox" id="testW" />
-                <label for="testW" class="font-black">Windows</label>
+                <input type="checkbox" id="checkboxBW" />
+                <label for="checkboxBW" class="font-black">Windows</label>
               </div>
-              <div class="col s6">
-                <form action="#">
-                  <input name="group1" type="radio" id="test1" disabled="disabled" />
-                  <label class="font-black" for="test1">Grundkenntnisse</label>
-                  <input name="group1" type="radio" id="test2" disabled="disabled" />
-                  <label for="test2" class="font-black">Fortgeschritten</label>
-                  <input name="group1" type="radio" id="test3" disabled="disabled" />
-                  <label for="test3" class="font-black">sehr gut</label>
-                </form>
+              <div class="col s9">
+                <div class="col s3">
+                  <input name="groupBW" type="radio" id="BW1" disabled="disabled" value="1" />
+                  <label for="BW1" class="font-black"></label>
+                </div>
+                <div class="col s3">
+                  <input name="groupBW" type="radio" id="BW2" disabled="disabled" value="2" />
+                  <label for="BW2" class="font-black"></label>
+                </div>
+                <div class="col s3">
+                  <input name="groupBW" type="radio" id="BW3" disabled="disabled" value="3" />
+                  <label for="BW3" class="font-black"></label>
+                </div>
               </div>
-              <br><br><br>
-              <a class="waves-effect waves-light btn">Speichern</a>
+            </form>
+
+            <!--LINUX-->
+            <form class="col s12">
+              <div class="col s3">
+                <input type="checkbox" id="checkboxBL" />
+                <label for="checkboxBL" class="font-black">Linux</label>
+              </div>
+              <div class="col s9">
+                <div class="col s3">
+                  <input name="groupBL" type="radio" id="BL1" disabled="disabled" value="1" />
+                  <label for="BL1" class="font-black"></label>
+                </div>
+                <div class="col s3">
+                  <input name="groupBL" type="radio" id="BL2" disabled="disabled" value="2" />
+                  <label for="BL2" class="font-black"></label>
+                </div>
+                <div class="col s3">
+                  <input name="groupBL" type="radio" id="BL3" disabled="disabled" value="3" />
+                  <label for="BL3" class="font-black"></label>
+                </div>
+              </div>
+            </form>
+
+            <!--MAC OS-->
+            <form class="col s12">
+              <div class="col s3">
+                <input type="checkbox" id="checkboxBM" />
+                <label for="checkboxBM" class="font-black">MAC OS</label>
+              </div>
+              <div class="col s9">
+                <div class="col s3">
+                  <input name="groupBM" type="radio" id="BM1" disabled="disabled" value="1" />
+                  <label for="BM1" class="font-black"></label>
+                </div>
+                <div class="col s3">
+                  <input name="groupBM" type="radio" id="BM2" disabled="disabled" value="2" />
+                  <label for="BM2" class="font-black"></label>
+                </div>
+                <div class="col s3">
+                  <input name="groupBM" type="radio" id="BM3" disabled="disabled" value="3" />
+                  <label for="BM3" class="font-black"></label>
+                </div>
+              </div>
+            </form>
+
+            <!--IOS-->
+            <form class="col s12">
+              <div class="col s3">
+                <input type="checkbox" id="checkboxBI" />
+                <label for="checkboxBI" class="font-black">IOS</label>
+              </div>
+              <div class="col s9">
+                <div class="col s3">
+                  <input name="groupBI" type="radio" id="BI1" disabled="disabled" value="1" />
+                  <label for="BI1" class="font-black"></label>
+                </div>
+                <div class="col s3">
+                  <input name="groupBI" type="radio" id="BI2" disabled="disabled" value="2" />
+                  <label for="BI2" class="font-black"></label>
+                </div>
+                <div class="col s3">
+                  <input name="groupBI" type="radio" id="BI3" disabled="disabled" value="3" />
+                  <label for="BI3" class="font-black"></label>
+                </div>
+              </div>
+            </form>
+            <br><br><br>
           </div>
+          <a class="waves-effect waves-light btn">Speichern</a>
+
+        </div>
+        <br>
+        <br>
+        <a id="box2_2_1" class="btn-floating waves-effect waves-light"><i class="material-icons btn-color">add</i></a><a style="font-size: 15px; color: black"> Programmiersprachen</a>
+        <div id="box2_2_2" style="display: none">
+          <div class="row" style="margin-left: 22px">
+            <form class="col s12">
+              <div class="col s3">
+
+              </div>
+              <div class="col s9">
+                <div class="col s3">
+                  Grundkenntnisse
+                </div>
+                <div class="col s3">
+                  Fortgeschritten
+                </div>
+                <div class="col s3">
+                  sehr gut
+                </div>
+              </div>
+            </form>
+            <br><br>
+
+            <!--JAVA-->
+            <form class="col s12">
+              <div class="col s3">
+                <input type="checkbox" id="checkboxPJ" />
+                <label for="checkboxPJ" class="font-black">Java</label>
+              </div>
+              <div class="col s9">
+                <div class="col s3">
+                  <input name="groupPJ" type="radio" id="PJ1" disabled="disabled" value="1" />
+                  <label for="PJ1" class="font-black"></label>
+                </div>
+                <div class="col s3">
+                  <input name="groupPJ" type="radio" id="PJ2" disabled="disabled" value="2" />
+                  <label for="PJ2" class="font-black"></label>
+                </div>
+                <div class="col s3">
+                  <input name="groupPJ" type="radio" id="PJ3" disabled="disabled" value="3" />
+                  <label for="PJ3" class="font-black"></label>
+                </div>
+              </div>
+            </form>
+
+            <!--JS-->
+            <form class="col s12">
+              <div class="col s3">
+                <input type="checkbox" id="checkboxPJS" />
+                <label for="checkboxPJS" class="font-black">Javascript</label>
+              </div>
+              <div class="col s9">
+                <div class="col s3">
+                  <input name="groupPJS" type="radio" id="PJS1" disabled="disabled" value="1" />
+                  <label for="PJS1" class="font-black"></label>
+                </div>
+                <div class="col s3">
+                  <input name="groupPJS" type="radio" id="PJS2" disabled="disabled" value="2" />
+                  <label for="PJS2" class="font-black"></label>
+                </div>
+                <div class="col s3">
+                  <input name="groupPJS" type="radio" id="PJS3" disabled="disabled" value="3" />
+                  <label for="PJS3" class="font-black"></label>
+                </div>
+              </div>
+            </form>
+
+            <!--C++-->
+            <form class="col s12">
+              <div class="col s3">
+                <input type="checkbox" id="checkboxPCP" />
+                <label for="checkboxPCP" class="font-black">C++</label>
+              </div>
+              <div class="col s9">
+                <div class="col s3">
+                  <input name="groupPM" type="radio" id="PCP1" disabled="disabled" value="1" />
+                  <label for="PCP1" class="font-black"></label>
+                </div>
+                <div class="col s3">
+                  <input name="groupPM" type="radio" id="PCP2" disabled="disabled" value="2" />
+                  <label for="PCP2" class="font-black"></label>
+                </div>
+                <div class="col s3">
+                  <input name="groupPM" type="radio" id="PCP3" disabled="disabled" value="3" />
+                  <label for="PCP3" class="font-black"></label>
+                </div>
+              </div>
+            </form>
+
+            <!--C-->
+            <form class="col s12">
+              <div class="col s3">
+                <input type="checkbox" id="checkboxPC" />
+                <label for="checkboxPC" class="font-black">C</label>
+              </div>
+              <div class="col s9">
+                <div class="col s3">
+                  <input name="groupPC" type="radio" id="PC1" disabled="disabled" value="1" />
+                  <label for="PC1" class="font-black"></label>
+                </div>
+                <div class="col s3">
+                  <input name="groupPC" type="radio" id="PC2" disabled="disabled" value="2" />
+                  <label for="PC2" class="font-black"></label>
+                </div>
+                <div class="col s3">
+                  <input name="groupPC" type="radio" id="PC3" disabled="disabled" value="3" />
+                  <label for="PC3" class="font-black"></label>
+                </div>
+              </div>
+            </form>
+            <br><br><br>
+          </div>
+          <a class="waves-effect waves-light btn">Speichern</a>
 
         </div>
 
 
-        <br>
-        <br>
-        <br>
-        <div class="row">
-          <form class="col s12">
-            <div class="input-field col s6">
-              <select multiple>
-                  <option value="" disabled selected >Bitte auswählen</option>
-                  <option value="1">Windows</option>
-                  <option value="2">Linux</option>
-                  <option value="3">Max OS X</option>
-                  <option value="4">IOS</option>
-                  <option value="5">etc</option>
-                </select>
-              <label>Betriebssysteme:</label>
-            </div>
-            <div class="input-field col s6">
-              <select multiple>
-                <option value="" disabled selected>Bitte auswählen</option>
-                <option value="1">JavaScript</option>
-                <option value="2">Java</option>
-                <option value="3">C#</option>
-                <option value="4">C++</option>
-                <option value="5">C</option>
-                <option value="6">etc.</option>
-              </select>
-              <label>Programmiersprachen:</label>
-            </div>
-            <div class="input-field col s6">
-              <select multiple>
-                <option value="" disabled selected>Bitte auswählen</option>
-                <option value="1">Ruby</option>
-                <option value="2">PHP</option>
-                <option value="3">Python</option>
-                <option value="5">etc</option>
-              </select>
-              <label>Skriptsprachen:</label>
-            </div>
-            <div class="input-field col s6">
-              <input id="sonstiges" type="text" class="validate"> <label for="name">Sonstiges: </label>
-            </div>
-            <a class="waves-effect waves-light btn">Speichern</a>
-          </form>
-        </div>
       </div>
     </div>
 
