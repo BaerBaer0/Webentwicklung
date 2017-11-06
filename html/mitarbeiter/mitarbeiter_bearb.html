@@ -5,10 +5,10 @@
   <!--Import Google Icon Font-->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!--Import materialize.css-->
-  <link type="text/css" rel="stylesheet" href="css/materialize.css" />
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css" />
   <link type="text/css" rel="stylesheet" href="css/layout.css" />
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-  <script type="text/javascript" src="js/materialize.js"></script>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
   <!--Let browser know website is optimized for mobile-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
@@ -87,7 +87,7 @@
             $('#' + data + '2').attr("disabled", "disabled");
             $('#' + data + '3').attr("disabled", "disabled");
           } else {
-            $('#' + data + '1').prop("checked", "checked");
+            $('#' + data + '1').attr("checked", "checked");
             $('#' + data + '1').removeAttr("disabled");
             $('#' + data + '2').removeAttr("disabled");
             $('#' + data + '3').removeAttr("disabled");
@@ -225,7 +225,7 @@
             <!--WINDOWS-->
             <form class="col s12">
               <div class="col s3">
-                <input type="checkbox" id="checkboxBW"  />
+                <input type="checkbox" id="checkboxBW" />
                 <label for="checkboxBW" class="font-black">Windows</label>
               </div>
               <div class="col s9">
@@ -247,7 +247,7 @@
             <!--LINUX-->
             <form class="col s12">
               <div class="col s3">
-                <input type="checkbox" id="checkboxBL"  />
+                <input type="checkbox" id="checkboxBL" />
                 <label for="checkboxBL" class="font-black">Linux</label>
               </div>
               <div class="col s9">
@@ -269,7 +269,7 @@
             <!--MAC OS-->
             <form class="col s12">
               <div class="col s3">
-                <input type="checkbox" id="checkboxBM"  />
+                <input type="checkbox" id="checkboxBM" />
                 <label for="checkboxBM" class="font-black">MAC OS</label>
               </div>
               <div class="col s9">
@@ -291,7 +291,7 @@
             <!--IOS-->
             <form class="col s12">
               <div class="col s3">
-                <input type="checkbox" id="checkboxBI"  />
+                <input type="checkbox" id="checkboxBI" />
                 <label for="checkboxBI" class="font-black">IOS</label>
               </div>
               <div class="col s9">
@@ -345,7 +345,7 @@
             <!--JAVA-->
             <form class="col s12">
               <div class="col s3">
-                <input type="checkbox" id="checkboxPJ"  />
+                <input type="checkbox" id="checkboxPJ" />
                 <label for="checkboxPJ" class="font-black">Java</label>
               </div>
               <div class="col s9">
@@ -367,7 +367,7 @@
             <!--JS-->
             <form class="col s12">
               <div class="col s3">
-                <input type="checkbox" id="checkboxPJS"  />
+                <input type="checkbox" id="checkboxPJS" />
                 <label for="checkboxPJS" class="font-black">Javascript</label>
               </div>
               <div class="col s9">
@@ -389,7 +389,7 @@
             <!--C++-->
             <form class="col s12">
               <div class="col s3">
-                <input type="checkbox" id="checkboxPCP"  />
+                <input type="checkbox" id="checkboxPCP" />
                 <label for="checkboxPCP" class="font-black">C++</label>
               </div>
               <div class="col s9">
@@ -465,7 +465,7 @@
             <!--Ruby-->
             <form class="col s12">
               <div class="col s3">
-                <input type="checkbox" id="checkboxSR"  />
+                <input type="checkbox" id="checkboxSR" />
                 <label for="checkboxSR" class="font-black">Ruby</label>
               </div>
               <div class="col s9">
@@ -487,7 +487,7 @@
             <!--PHP-->
             <form class="col s12">
               <div class="col s3">
-                <input type="checkbox" id="checkboxSPHP"  />
+                <input type="checkbox" id="checkboxSPHP" />
                 <label for="checkboxSPHP" class="font-black">PHP</label>
               </div>
               <div class="col s9">
@@ -509,7 +509,7 @@
             <!--PYTHON-->
             <form class="col s12">
               <div class="col s3">
-                <input type="checkbox" id="checkboxSP"  />
+                <input type="checkbox" id="checkboxSP" />
                 <label for="checkboxSP" class="font-black">Python</label>
               </div>
               <div class="col s9">
@@ -531,7 +531,7 @@
             <!--etc-->
             <form class="col s12">
               <div class="col s3">
-                <input type="checkbox" id="checkboxSetc"  />
+                <input type="checkbox" id="checkboxSetc" />
                 <label for="checkboxSetc" class="font-black">etc</label>
               </div>
               <div class="col s9">
