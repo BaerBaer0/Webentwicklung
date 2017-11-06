@@ -7419,7 +7419,7 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 .side-nav li > a.btn-floating:hover {
-  background-color: #26a69a;
+  background-color: red;
 }
 
 .side-nav li > a > i,
